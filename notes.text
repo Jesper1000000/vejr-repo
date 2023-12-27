@@ -1,2 +1,0 @@
-** Using this to see the structure of the json **
-print(json.dumps(data, indent=2)) 
