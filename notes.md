@@ -7,11 +7,40 @@ data = r.json()
 print(json.dumps(data, indent=2)) 
 ```
 --- 
+
 ### Change data type in dataframe 
+
+Thanks to this article: https://saturncloud.io/blog/python-pandas-converting-object-to-string-type-in-dataframes/
+
+
 ```
-df['column_name'] = df['column_name'].astype("new_data_type") 
+list_name = [
+    'column_name', 
+    'column_name', 
+    'column_name', 
+    'column_name', 
+    'column_name'
+]
+df[list_name] = df[list_name].astype('string')
 ```
-#### Example: 
+#### Example shows converting columns to string: 
 ```
-df['properties_stationId'] = df['properties_stationId'].astype("int64") 
+string_columns = [
+    'id', 
+    'geometry_coordinates', 
+    'properties_observed', 
+    'properties_parameterId', 
+    'properties_stationId'
+]
+df[string_columns] = df[string_columns].astype('string')
+```
+---
+
+### Show all pandas cols no matter what (I think)
+
+The code: 
+```
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', None)
+pd.set_option('display.width', None)
 ```
